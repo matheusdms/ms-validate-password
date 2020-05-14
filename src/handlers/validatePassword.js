@@ -1,37 +1,41 @@
 'use strict';
 
-const passwordRules = require('../helpers/password-rules');
+const PasswordRules = require('../helpers/PasswordRules');
 
-const handler = async (event) => {
+class ValidatePassword {
 
-  const requestBody = JSON.parse(event.body);
+  static async handler(event) {
+    const requestBody = JSON.parse(event.body);
 
-  try {
-
-    if(!requestBody || requestBody.password === undefined) {
-      throw new Error("Body parameter password is required.");
-    }
-
-    const { password } = requestBody;
-
-    let allRulesOk = true;
-    for (let rule of Object.keys(passwordRules)) {
-      allRulesOk = await passwordRules[rule](password);
+    try {
   
-      if(!allRulesOk) break;
-    }
+      if(!requestBody || requestBody.password === undefined) {
+        throw new Error("Body parameter password is required.");
+      }
   
-    return {
-      statusCode: 200,
-      body: allRulesOk,
-    };
+      const { password } = requestBody;
+  
+      const passwordRules = new PasswordRules();
 
-  } catch(e) {
-    return {
-      statusCode: 500,
-      body: e.message,
-    };
+      let allRulesOk = true;
+      for (let rule of passwordRules.getRules()) {
+        allRulesOk = await passwordRules[rule](password);
+    
+        if(!allRulesOk) break;
+      }
+    
+      return {
+        statusCode: 200,
+        body: allRulesOk,
+      };
+  
+    } catch(e) {
+      return {
+        statusCode: 500,
+        body: e.message,
+      };
+    }
   }
 };
 
-module.exports = { handler };
+module.exports = ValidatePassword;

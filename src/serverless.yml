@@ -11,7 +11,7 @@ provider:
 functions:
   validate-password:
     functionName: ${self:service}-${self:provider.stage}-validate-password
-    handler: handlers/validatePassword.handler
+    handler: handlers/ValidatePassword.handler
     warmup: true
     events:
       - http:
