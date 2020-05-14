@@ -1,6 +1,6 @@
 'use strict';
 
-const validateString = (string) => { return typeof string === "string" && string.length };
+const validateString = (string) => { return typeof string === "string" && string.length > 0 };
 
 const verifyMinLength = (string) => { return string.length >= 9 };
 
