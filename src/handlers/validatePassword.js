@@ -8,7 +8,7 @@ const handler = async (event) => {
 
   try {
 
-    if(!requestBody || !requestBody.password) {
+    if(!requestBody || requestBody.password === undefined) {
       throw new Error("Body parameter password is required.");
     }
 
@@ -27,7 +27,6 @@ const handler = async (event) => {
     };
 
   } catch(e) {
-
     return {
       statusCode: 500,
       body: e.message,

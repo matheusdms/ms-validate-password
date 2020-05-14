@@ -1,27 +1,24 @@
 'use strict';
 
-const validateString = (string) => {
-  return true;
-}
+const validateString = (string) => { return typeof string === "string" && string.length };
 
-const verifyMinLength = (string) => {
-  return true;
-}
+const verifyMinLength = (string) => { return string.length >= 9 };
 
-const verifyUpperCaseLetter = (string) => {
-  return true;
-}
+const verifyUpperCaseLetter = (string) => { return string.split("").map(s => s.toUpperCase() === s).some(c => c) };
 
-const verifyLowerCaseLetter = (string) => {
-  return true;
-}
+const verifyLowerCaseLetter = (string) => { return string.split("").map(s => s.toLowerCase() === s).some(c => c) };
 
 const verifyEspecialCharacter = (string) => {
-  return true;
+  const especialCharacters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+  return especialCharacters.test(string);
 }
 
 const verifyRepeatedCharacter = (string) => {
-  return true;
+  const isRepeated = string.split("").some((v, i, a) => {
+    return a.lastIndexOf(v) != i;
+  });
+
+  return !isRepeated;
 }
 
 module.exports = {
