@@ -1,0 +1,21 @@
+service: ms-validate-password
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-east-1
+  profile: challenge
+
+functions:
+  validate-password:
+    functionName: ${self:service}-${self:provider.stage}-validate-password
+    handler: src/handlers/validatePassword.handler
+    warmup: true
+    events:
+      - http:
+          path: /validate-password
+          method: post
+
+plugins:
+  - serverless-offline
