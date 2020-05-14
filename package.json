@@ -1,0 +1,19 @@
+{
+  "name": "ms-validate-password",
+  "version": "1.0.0",
+  "description": "A micro-service that receive a string and verify if it is a strong, secure and a valid password.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusdms/ms-validate-password.git"
+  },
+  "author": "Matheus das Mercês",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheusdms/ms-validate-password/issues"
+  },
+  "homepage": "https://github.com/matheusdms/ms-validate-password#readme"
+}
