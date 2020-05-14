@@ -6,11 +6,12 @@ provider:
   stage: dev
   region: us-east-1
   profile: challenge
+  apiKeys: ${file(ymls/apiKeys.yml)}
 
 functions:
   validate-password:
     functionName: ${self:service}-${self:provider.stage}-validate-password
-    handler: src/handlers/validatePassword.handler
+    handler: handlers/validatePassword.handler
     warmup: true
     events:
       - http:

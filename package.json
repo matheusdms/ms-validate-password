@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/matheusdms/ms-validate-password/issues"
   },
-  "homepage": "https://github.com/matheusdms/ms-validate-password#readme"
+  "homepage": "https://github.com/matheusdms/ms-validate-password#readme",
+  "devDependencies": {
+    "serverless-offline": "^6.1.5"
+  }
 }
