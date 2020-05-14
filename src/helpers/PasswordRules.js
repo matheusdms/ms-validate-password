@@ -8,7 +8,7 @@ class PasswordRules {
       "verifyMinLength",
       "verifyUpperCaseLetter",
       "verifyLowerCaseLetter",
-      "verifyEspecialCharacter",
+      "verifySpecialCharacter",
       "verifyRepeatedCharacter",
     ]
   }
@@ -21,9 +21,9 @@ class PasswordRules {
 
   verifyLowerCaseLetter(string) { return string.split("").map(s => s.toLowerCase() === s).some(c => c) };
 
-  verifyEspecialCharacter(string) {
-    const especialCharacters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    return especialCharacters.test(string);
+  verifySpecialCharacter(string) {
+    const specialCharacters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    return specialCharacters.test(string);
   }
 
   verifyRepeatedCharacter(string) {
