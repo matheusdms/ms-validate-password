@@ -26,13 +26,13 @@ class ValidatePassword {
     
       return {
         statusCode: 200,
-        body: allRulesOk,
+        body: JSON.stringify(allRulesOk),
       };
   
     } catch(e) {
       return {
         statusCode: 500,
-        body: e.message,
+        body: JSON.stringify(e.message),
       };
     }
   }

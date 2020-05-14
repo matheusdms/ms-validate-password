@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/matheusdms/ms-validate-password#readme",
   "devDependencies": {
-    "serverless-offline": "^6.1.5"
+    "serverless": "^1.49.0",
+    "serverless-offline": "^5.10.1"
   },
   "dependencies": {
     "chai": "^4.2.0",
