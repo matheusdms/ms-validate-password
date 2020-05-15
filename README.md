@@ -30,7 +30,7 @@ This is a serverless project, so I've choosed serverless-framework. I could use 
 
 This is a simple web service, so one of the most used architecture is a stack on AWS using API Gateway and Lambda function. I could DynamoDB as database, but in this case we dont need to access any data on databases.
 
-![picture](docs/architecture.jpg)
+![picture](src/docs/architecture.jpg)
 
 <br /><br />
 
