@@ -24,7 +24,7 @@ This is a serverless project, so I've choosed serverless-framework. I could use 
 - Node.js12.x (https://nodejs.org/en/)
 - Serverless Framework 1.49.0 (https://www.serverless.com/)
 
-<br /><br />
+<br />
 
 ## Architecture<a name="architecture"></a>
 
@@ -32,13 +32,13 @@ This is a simple web service, so one of the most used architecture is a stack on
 
 ![picture](src/docs/architecture.jpg)
 
-<br /><br />
+<br />
 
 ## Security<a name="security"></a>
 
 Perhabs the application do not access or show users data, the function was set to private and only receives call with an API Key specified on API Gateway settings.
 
-<br /><br />
+<br />
 
 ## How to run locally<a name="runlocalhost"></a>
 
